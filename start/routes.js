@@ -27,6 +27,8 @@ Route.post('login', 'AuthController.login')
 Route.post('register', 'AuthController.register')
 Route.post('pagamento', 'PagamentoController.index')
 
+Route.get('/', () => 'Hello')
+
 
 Route.get('metodo', "PagamentoController.paymentMethods")
 Route.get('lojas/:slug', "LojaController.GetLojaByName")
