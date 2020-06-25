@@ -8,11 +8,11 @@ const Hash = use("Hash");
 
 class User extends Model {
   Store() {
-    return this.hasMany("App/models/Store");
+    return this.hasMany("App/Models/Store");
   }
 
   Products() {
-    return this.hasMany("App/models/Product");
+    return this.hasMany("App/Models/Product");
   }
 
   static get hidden() {

@@ -68,9 +68,9 @@ class LojaController {
     const userId = data.user_id;
     try {
       const user = await User.findBy("id", userId);
-      // const lojas = await user.Store().fetch();
+      const lojas = await user.Store().fetch();
 
-      return response.send(user);
+      return response.send(lojas);
     } catch (error) {
       return response.send(error);
     }
