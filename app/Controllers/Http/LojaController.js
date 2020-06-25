@@ -64,17 +64,16 @@ class LojaController {
 
   async getStoreByUser({ request, response }) {
 
-    return response.send(request.all())
-    // const data = request.all();
-    // const userId = data.user_id;
-    // try {
-    //   const user = await User.findBy("id", userId);
-    //   const lojas = await user.Store().fetch();
+    const data = request.all();
+    const userId = data.user_id;
+    try {
+      const user = await User.findBy("id", userId);
+      // const lojas = await user.Store().fetch();
 
-    //   return response.send({ user, lojas });
-    // } catch (error) {
-    //   return response.send(error);
-    // }
+      return response.send(user);
+    } catch (error) {
+      return response.send(error);
+    }
   }
 }
 
