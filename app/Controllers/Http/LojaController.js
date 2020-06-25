@@ -70,7 +70,7 @@ class LojaController {
       const user = await User.findBy("id", userId);
       const lojas = await user.Store().fetch();
 
-      return response.send(lojas);
+      return response.send({user, store});
     } catch (error) {
       return response.send(error);
     }
