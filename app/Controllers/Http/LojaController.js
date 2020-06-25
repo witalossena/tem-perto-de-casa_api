@@ -1,6 +1,7 @@
 "use strict";
 
 const Store = use("App/Models/Store");
+const User = use("App/Models/User");
 
 class LojaController {
   async GetAllStore({ request, response }) {
@@ -15,7 +16,7 @@ class LojaController {
   async GetLojaByName({ request, response }) {
     const slug = request.params.slug;
     try {
-      const store = await Store.findBy('store_slug', slug);
+      const store = await Store.findBy("store_slug", slug);
 
       if (!store) {
         return response.send({ error: "erro" });
@@ -28,7 +29,6 @@ class LojaController {
   }
 
   async Store({ request, response }) {
-
     try {
       const data = request.except(["token"]);
       const store = await Store.create(data);
@@ -51,16 +51,28 @@ class LojaController {
 
   async LojaProducts({ request, response }) {
     const data = request.all();
-    const id = data.user.id
+    const id = data.user.id;
 
     try {
-      const store = await Store.find(id)
+      const store = await Store.find(id);
       const products = await store.products().fetch();
-      console.log(products)
+      console.log(products);
 
-      return response.send(products)
-       
+      return response.send(products);
     } catch (error) {}
+  }
+
+  async getStoreByUser({ request, response }) {
+    const data = request.all();
+    const userId = data.user_id;
+    try {
+      const user = await User.findBy("id", userId);
+      const lojas = await user.Store().fetch();
+
+      return response.send({ user, store });
+    } catch (error) {
+      return response.send(error);
+    }
   }
 }
 

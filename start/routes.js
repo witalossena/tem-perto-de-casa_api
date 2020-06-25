@@ -36,7 +36,7 @@ Route.get('lojas', "LojaController.GetAllStore")
 
 Route.post('loja', "LojaController.Store").middleware(["auth"])
 Route.post('produtos', "ProdutoController.store")
-Route.post('user/store', "UserController.getUserStore")
+Route.post('user/store', "LojaController.getStoreByUser")
 
 Route.put('loja', "LojaController.UpdateStore")
 Route.post('products', "UserController.getUserProducts")
