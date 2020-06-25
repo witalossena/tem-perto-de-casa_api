@@ -33,9 +33,11 @@ class UserController {
       const products = await user.Products().fetch()
       const lojas = await user.Store().fetch()
 
-      return response.send({lojas, products})
+      return response.send(data)
 
     } catch (error) {
+      return response.send(error)
+
       
     }
 
