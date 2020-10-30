@@ -22,7 +22,7 @@ Route.post('login', 'AuthController.login')
 Route.post('register', 'AuthController.register')
 Route.post('pagamento', 'PagamentoController.index')
 
-Route.get('/', () => 'Ola, Me encontre em --> https://www.github.com/witalossena')
+Route.get('/', () => 'LojaController.GetAllStore')
 
 
 Route.get('metodo', "PagamentoController.paymentMethods")
