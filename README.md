@@ -1,27 +1,33 @@
-# Adonis API application
+## Descrição
 
-This is the boilerplate for creating an API server in AdonisJs, it comes pre-configured with.
+API RestFull de ecommerce criada com o intuito de estudo.
 
-1. Bodyparser
-2. Authentication
-3. CORS
-4. Lucid ORM
-5. Migrations and seeds
+APi com os seguintes metódos:
 
-## Setup
+* cadastro de usuario com geração de token jwt
+* cadastro de lojas, produtos e categorias
+* retorno de loja por categorias e usuários.
 
-Use the adonis command to install the blueprint
+Api encontra-se hospedada no heroku [aqui](https://tpdc.herokuapp.com/)
 
-```bash
-adonis new yardstick --api-only
-```
 
-or manually clone the repo and then run `npm install`.
+## Tecnologias usadas neste projeto
+
+* Adonis.js (4.1)
+* node
+* mySql
+
+## Scritps
+
+Após configurar o arquivo .env com as informação do seu banco de dados, no diretório do projeto você pode rodar:
+
+
+### `npm install` & `adonis serve --dev`
 
 
 ### Migrations
 
-Run the following command to run startup migrations.
+Rode o comando abaixo para instalar os tabelas no banco de dados..
 
 ```js
 adonis migration:run

@@ -18,16 +18,11 @@
 
 const Route = use('Route')
 
-
-
-// Route.post('users', 'UserController.store')
-// Route.get('users', 'UserController.index')
-
 Route.post('login', 'AuthController.login')
 Route.post('register', 'AuthController.register')
 Route.post('pagamento', 'PagamentoController.index')
 
-Route.get('/', () => 'Hello')
+Route.get('/', () => 'Ola, Me encontre em --> https://www.github.com/witalossena')
 
 
 Route.get('metodo', "PagamentoController.paymentMethods")
