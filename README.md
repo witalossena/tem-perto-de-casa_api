@@ -21,9 +21,9 @@ Api encontra-se hospedada no heroku [aqui](https://tpdc.herokuapp.com/)
 
 Após configurar o arquivo .env com as informação do seu banco de dados, no diretório do projeto você pode rodar:
 
-
-### `npm install` & `adonis serve --dev`
-
+```js
+ npm install & adonis serve --dev
+```
 
 ### Migrations
 
